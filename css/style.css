@@ -2,6 +2,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', Courier, monospace;
 }
 
+img {
+    max-width: 25vw;
+    width: 25vw;
+    max-height: 25vh;
+    height: 25vh;
+}
 
+.flex-page,
+.flex-content,
+.header,
+.intro,
+.content-top,
+.content-upper-mid,
+.img-card-pane,
+.img-card,
+.content-lower-mid,
+.content-bottom,
+.action-card,
+.text,
+.footer {
+    display: flex;
+}
+
+.flex-content,
+.intro,
+.content-upper-mid,
+.content-lower-mid,
+.text,
+.img-card,
+.flex-page {
+    flex-direction: column;
+    align-items: center;
+}
