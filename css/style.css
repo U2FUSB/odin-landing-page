@@ -1,3 +1,4 @@
+/* General styling and style reversal */
 * {
     margin: 0;
     padding: 0;
@@ -6,45 +7,18 @@
     list-style: none;
     text-decoration: none;
     color: inherit;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
 
 img {
-    max-width: 25vw;
-    width: 25vw;
-    max-height: 25vh;
-    height: 25vh;
-}
-
-.flex-page,
-.flex-content,
-.header,
-.intro,
-.content-top,
-.content-upper-mid,
-.img-card-pane,
-.img-card,
-.content-lower-mid,
-.content-bottom,
-.action-card,
-.text,
-.footer {
-    display: flex;
-}
-
-.flex-content,
-.intro,
-.content-upper-mid,
-.content-lower-mid,
-.text,
-.img-card,
-.flex-page {
-    flex-direction: column;
-    align-items: center;
+    width: 10em;
+    height: 10em;
 }
 
 /* Text style formatting */
 .header,
-.content-top,
 .footer {
     background-color: #1F2937;
 }
@@ -74,9 +48,11 @@ img {
     color: #F9FAF8;
     border-radius: 6px;
 }
+
 .content-top button {
     border: 0;
 }
+
 .action-card button {
     border-color: #F9FAF8;
 }
@@ -96,7 +72,93 @@ img {
     font-style: italic;
     color: #1F2937;
 }
+
 .img-card img {
     border: 0.25em solid #3882F6;
     border-radius: 6px;
+}
+
+/* flex activation and basic directions */
+.flex-page,
+.flex-content,
+.header,
+.header-top,
+.intro,
+.content-top,
+.content-upper-mid,
+.img-card-pane,
+.img-card,
+.content-lower-mid,
+.content-bottom,
+.action-card,
+.text,
+.links,
+.footer {
+    display: flex;
+}
+
+.flex-content,
+.intro,
+.content-upper-mid,
+.content-lower-mid,
+.text,
+.img-card,
+.flex-page,
+.header {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Flexbox Item Alignment */
+.flex-page {
+    min-height: 100vh;
+}
+
+.header-top,
+.content-top,
+.content-upper-mid,
+.content-lower-mid,
+.content-bottom,
+.footer {
+    flex-grow: 1;
+    min-width: 100vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    justify-content: center;
+}
+
+.content-top,
+.content-upper-mid,
+.content-lower-mid,
+.content-bottom {
+    min-height: 20em;
+}
+
+.header-top,
+.footer {
+    min-height: 5vh;
+    align-items: center;
+}
+
+.header {
+    margin-top: 0;
+}
+
+.header-top {
+    justify-content: space-between;
+}
+.links {
+    gap: 3vw;
+}
+
+.flex-content {
+    flex-grow: 1;
+    min-width: 100vw;
+}
+
+.footer {
+    min-height: 5vh;
+    flex-grow: 0;
+    justify-content: center;
+    margin-bottom: 0;
 }
