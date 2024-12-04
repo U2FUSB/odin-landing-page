@@ -8,13 +8,17 @@
     text-decoration: none;
     color: inherit;
     overflow-x: hidden;
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
 }
 
 img {
-    width: 10em;
-    height: 10em;
+    min-width: 10em;
+    max-width: 30em;
+    min-height: 10em;
+    max-height: 30em;
 }
 
 /* Text style formatting */
@@ -48,7 +52,11 @@ img {
     color: #F9FAF8;
     border-radius: 6px;
 }
-
+.action-card button,
+.content-top button {
+    padding: .5em 2em;
+    font-weight: bold;
+}
 .content-top button {
     border: 0;
 }
@@ -110,6 +118,7 @@ img {
 }
 
 /* Flexbox Item Alignment */
+/* ### Whole Page and generalised stuff ### */
 .flex-page {
     min-height: 100vh;
 }
@@ -131,7 +140,7 @@ img {
 .content-upper-mid,
 .content-lower-mid,
 .content-bottom {
-    min-height: 20em;
+    min-height: 40em;
 }
 
 .header-top,
@@ -140,6 +149,7 @@ img {
     align-items: center;
 }
 
+/* ### header ### */
 .header {
     margin-top: 0;
 }
@@ -147,15 +157,77 @@ img {
 .header-top {
     justify-content: space-between;
 }
+
 .links {
     gap: 3vw;
 }
+
+.content-top {
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+}
+.intro {
+    align-items: flex-start;
+    max-height: 25em;
+}
+.intro button {
+    margin-top: 1em;
+}
+.content-top img {
+    flex-shrink: 0;
+    flex-basis: 25vw;
+    min-height: 25em;
+}
+
+/* ### content ### */
 
 .flex-content {
     flex-grow: 1;
     min-width: 100vw;
 }
+.content-upper-mid {
+    justify-content: space-around;
+    padding-top:  5em;
+    padding-bottom: 10em;
+    gap: 3em;
+}
+.img-card-pane {
+    gap: 5vw;
+    align-items: center;
+}
+.img-card {
+    min-width: 10em;
+    gap: 2em;
+}
+.img-card .img-description {
+    text-align: center;
+}
+.content-lower-mid {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+.content-lower-mid .quote-ref {
+    align-self: flex-end;
+}
 
+.action-card {
+    margin-top: 12.5em;
+    margin-bottom: 12.5em;
+    max-width: 60em;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+.action-card .text {
+    justify-content: center;
+    align-items: flex-start;
+}
+.action-card button {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ### footer ### */
 .footer {
     min-height: 5vh;
     flex-grow: 0;
